@@ -1,6 +1,6 @@
 /*
  * Submit no.26847445
- * 
+ *
  * Copyright (C) 2021. Hyun-Ku Lee
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -32,29 +32,29 @@ public class Main{
 		public final int x;
 		public final int y;
 		public final int r;
-		
+
 		public Location(Scanner s){
 			x = s.nextInt();
 			y = s.nextInt();
 			r = s.nextInt();
 		}
-		
+
 		public int getOverlap(Location loc){
 			double dist = getDistance(loc);
-            if(dist == 0 && r == loc.r) return -1;
+			if(dist == 0 && r == loc.r) return -1;
 			else if((r + dist) < loc.r || (loc.r + dist) < r) return 0;
 			else if((r + loc.r) == dist || Math.abs(r - loc.r) == dist) return 1;
-            else if((r + loc.r) > dist && Math.abs(r - loc.r) < dist) return 2;
+			else if((r + loc.r) > dist && Math.abs(r - loc.r) < dist) return 2;
 			else if((r + loc.r) < dist && Math.abs(r - loc.r) > dist) return 0;
-            else return 0;
+			else return 0;
 		}
-		
+
 		public double getDistance(Location loc){
 			int _x = getDiffrence(x, loc.x);
 			int _y = getDiffrence(y, loc.y);
 			return Math.sqrt((_x * _x) + (_y * _y));
 		}
-		
+
 		private int getDiffrence(int a, int b){ return Math.max(a, b) - Math.min(a, b); }
 	}
 }
