@@ -1,5 +1,5 @@
 /*
- * Standard Input and Output in Javascript(Node.js)
+ * Submit no.27581659
  * 
  * Copyright (C) 2021. Hyun-Ku Lee
  *
@@ -16,8 +16,34 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-//INPUT ROUTINE
-	var input = require('fs').readFileSync('/dev/stdin').toString();
+#include <stdio.h>
 
-//OUTPUT ROUTINE
-	console.log(input);
+const int MNT = 30;
+const int KLI[12] = {
+    1, -2, 1,
+    0, 1, 0,
+    1, 1, 0,
+    1, 0, 1
+};
+const char TAG[7][4] = {
+    "MON", "TUE", "WED",
+    "THU", "FRI", "SAT",
+    "SUN"
+};
+
+int clmd(int mna)
+{
+    mna--;
+    int erg = 0;
+    for(int i = 0; i < mna; i++)
+        erg += MNT + KLI[i];
+    return erg;
+}
+
+int main(void)
+{
+    int mna, tag;
+    scanf("%d %d", &mna, &tag);
+    printf(TAG[(clmd(mna) + tag - 1) % 7]);
+    return 0;
+}

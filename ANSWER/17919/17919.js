@@ -1,5 +1,5 @@
 /*
- * Standard Input and Output in Javascript(Node.js)
+ * Submit no.27583348
  * 
  * Copyright (C) 2021. Hyun-Ku Lee
  *
@@ -16,8 +16,14 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-//INPUT ROUTINE
-	var input = require('fs').readFileSync('/dev/stdin').toString();
-
-//OUTPUT ROUTINE
-	console.log(input);
+var sch = require('fs').readFileSync('/dev/stdin').toString().split(' ');
+var ges = 0, zah = 0;
+for(var s of sch){
+    ges++;
+    if(s.includes('ae'))
+        zah++;
+}
+console.log((zah / ges) >= 0.4 ? 
+            'dae ae ju traeligt va' : 
+            'haer talar vi rikssvenska'
+);

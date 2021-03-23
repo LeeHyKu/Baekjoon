@@ -1,5 +1,5 @@
 /*
- * Standard Input and Output in Javascript(Node.js)
+ * Submit no.27581918
  * 
  * Copyright (C) 2021. Hyun-Ku Lee
  *
@@ -16,8 +16,4 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-//INPUT ROUTINE
-	var input = require('fs').readFileSync('/dev/stdin').toString();
-
-//OUTPUT ROUTINE
-	console.log(input);
+console.log(require('fs').readFileSync('/dev/stdin').toString());
