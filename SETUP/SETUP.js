@@ -17,7 +17,16 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 //INPUT ROUTINE
-	var input = require('fs').readFileSync('/dev/stdin').toString();
+	var input = require('fs').readFileSync('/dev/stdin').toString(); //nein! Diese Routine verursacht wahrscheinlich Fehler!!!
+
+	var inp = [];
+	require('readline').createInterface({
+		input: process.stdin,
+  		output: process.stdout,
+	}).on('line', l=>inp.push(l))
+	  .on('close', ()=>{
+		  //tun!!
+	  });
 
 //OUTPUT ROUTINE
 	console.log(input);
